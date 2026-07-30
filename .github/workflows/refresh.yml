@@ -1,0 +1,36 @@
+name: 토큰 자동 갱신 (witness_way)
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'     # 매주 월요일 12:00 UTC — 60일 만료 전에 미리 연장
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: 새 토큰 발급
+        id: tok
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python3 publish.py --refresh-token
+      - name: 시크릿(IG_ACCESS_TOKEN) 갱신
+        if: ${{ steps.tok.outputs.new_token != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "GH_PAT 시크릿이 없어 자동 갱신을 건너뜁니다(토큰은 발급됨)."
+            exit 0
+          fi
+          gh secret set IG_ACCESS_TOKEN \
+            --repo "${{ github.repository }}" \
+            --body "${{ steps.tok.outputs.new_token }}"
+          echo "IG_ACCESS_TOKEN 시크릿 갱신 완료"

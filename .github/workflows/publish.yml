@@ -1,0 +1,40 @@
+name: 자동 발행 (witness_way)
+
+on:
+  schedule:
+    - cron: '0 * * * *'      # 매시 정각(UTC)에 점검 → 예정 시각이 된 편만 1개 발행
+  workflow_dispatch: {}       # 수동 실행 버튼
+
+permissions:
+  contents: write             # queue.json 갱신을 저장소에 커밋하기 위해
+
+concurrency:
+  group: publish
+  cancel-in-progress: false   # 겹치지 않도록 (중복 발행 방지)
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/Los_Angeles           # 예약 시각(at)을 태평양시로 해석
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: 예정 편 발행
+        run: python3 publish.py --next
+      - name: 큐 상태 저장(커밋)
+        run: |
+          if ! git diff --quiet -- queue.json; then
+            git config user.name  "witnessway-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add queue.json
+            git commit -m "chore: 발행 큐 갱신 [skip ci]"
+            git push
+          else
+            echo "변경 없음 — 커밋 생략"
+          fi
