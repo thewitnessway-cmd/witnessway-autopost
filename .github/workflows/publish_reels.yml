@@ -1,0 +1,41 @@
+name: 릴스 자동 발행 (witness_way)
+
+on:
+  schedule:
+    - cron: '5 * * * *'       # 매시 5분(UTC) 백업 점검
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-reels
+  cancel-in-progress: false
+
+jobs:
+  publish-reels:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/New_York                # 예약 시각(at)을 미국 동부시로 해석
+      QUEUE_FILE: queue_reels.json        # 릴스 전용 큐
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      RAW_BASE: https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: 예정 릴스 발행
+        run: python3 publish.py --next
+      - name: 릴스 큐 상태 저장(커밋)
+        run: |
+          if ! git diff --quiet -- queue_reels.json; then
+            git config user.name  "witnessway-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add queue_reels.json
+            git commit -m "chore: 릴스 큐 갱신 [skip ci]"
+            git push
+          else
+            echo "변경 없음"
+          fi
