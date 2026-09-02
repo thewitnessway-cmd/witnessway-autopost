@@ -183,7 +183,7 @@ def _is_due(it, now):
         return True
 
 def next_job(cfg):
-    qp = HERE / "queue.json"
+    qp = HERE / os.environ.get("QUEUE_FILE", "queue.json")
     if not qp.exists():
         print("[자동발행] queue.json 없음"); return
     q = json.loads(qp.read_text(encoding="utf-8"))
