@@ -16,7 +16,7 @@ jobs:
   publish-reels:
     runs-on: ubuntu-latest
     env:
-      TZ: America/New_York                # 예약 시각(at)을 미국 동부시로 해석
+      TZ: America/Los_Angeles                # 예약 시각(at)을 미국 서부(LA)시로 해석
       QUEUE_FILE: queue_reels.json        # 릴스 전용 큐
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
       IG_USER_ID: ${{ secrets.IG_USER_ID }}
