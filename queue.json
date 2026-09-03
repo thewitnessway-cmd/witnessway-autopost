@@ -11,25 +11,25 @@
   {
     "편": "002",
     "job": "jobs/002.json",
-    "at": "2026-09-02 06:00",
-    "posted": true,
-    "posted_ts": 1788354024.1157086,
-    "posted_at": "2026-09-02 06:00:24",
-    "media_id": "18118873013490699"
+    "at": "2026-09-04 06:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
   },
   {
     "편": "003",
     "job": "jobs/003.json",
-    "at": "2026-09-03 06:00",
-    "posted": true,
-    "posted_ts": 1788440453.1373315,
-    "posted_at": "2026-09-03 06:00:53",
-    "media_id": "18467054374115067"
+    "at": "2026-09-05 06:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
   },
   {
     "편": "004",
     "job": "jobs/004.json",
-    "at": "2026-09-04 06:00",
+    "at": "2026-09-06 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -38,7 +38,7 @@
   {
     "편": "005",
     "job": "jobs/005.json",
-    "at": "2026-09-05 06:00",
+    "at": "2026-09-07 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -47,7 +47,7 @@
   {
     "편": "006",
     "job": "jobs/006.json",
-    "at": "2026-09-06 06:00",
+    "at": "2026-09-08 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -56,7 +56,7 @@
   {
     "편": "007",
     "job": "jobs/007.json",
-    "at": "2026-09-07 06:00",
+    "at": "2026-09-09 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -65,7 +65,7 @@
   {
     "편": "008",
     "job": "jobs/008.json",
-    "at": "2026-09-08 06:00",
+    "at": "2026-09-10 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -74,7 +74,7 @@
   {
     "편": "009",
     "job": "jobs/009.json",
-    "at": "2026-09-09 06:00",
+    "at": "2026-09-11 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -83,7 +83,7 @@
   {
     "편": "010",
     "job": "jobs/010.json",
-    "at": "2026-09-10 06:00",
+    "at": "2026-09-12 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -92,7 +92,7 @@
   {
     "편": "011",
     "job": "jobs/011.json",
-    "at": "2026-09-11 06:00",
+    "at": "2026-09-13 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -101,7 +101,7 @@
   {
     "편": "012",
     "job": "jobs/012.json",
-    "at": "2026-09-12 06:00",
+    "at": "2026-09-14 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -110,7 +110,7 @@
   {
     "편": "013",
     "job": "jobs/013.json",
-    "at": "2026-09-13 06:00",
+    "at": "2026-09-15 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -119,7 +119,7 @@
   {
     "편": "014",
     "job": "jobs/014.json",
-    "at": "2026-09-14 06:00",
+    "at": "2026-09-16 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -128,7 +128,7 @@
   {
     "편": "015",
     "job": "jobs/015.json",
-    "at": "2026-09-15 06:00",
+    "at": "2026-09-17 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -137,7 +137,7 @@
   {
     "편": "016",
     "job": "jobs/016.json",
-    "at": "2026-09-16 06:00",
+    "at": "2026-09-18 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -146,7 +146,7 @@
   {
     "편": "017",
     "job": "jobs/017.json",
-    "at": "2026-09-17 06:00",
+    "at": "2026-09-19 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -155,7 +155,7 @@
   {
     "편": "018",
     "job": "jobs/018.json",
-    "at": "2026-09-18 06:00",
+    "at": "2026-09-20 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -164,7 +164,7 @@
   {
     "편": "019",
     "job": "jobs/019.json",
-    "at": "2026-09-19 06:00",
+    "at": "2026-09-21 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -173,7 +173,7 @@
   {
     "편": "020",
     "job": "jobs/020.json",
-    "at": "2026-09-20 06:00",
+    "at": "2026-09-22 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -182,7 +182,7 @@
   {
     "편": "021",
     "job": "jobs/021.json",
-    "at": "2026-09-21 06:00",
+    "at": "2026-09-23 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -191,7 +191,7 @@
   {
     "편": "022",
     "job": "jobs/022.json",
-    "at": "2026-09-22 06:00",
+    "at": "2026-09-24 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -200,7 +200,7 @@
   {
     "편": "023",
     "job": "jobs/023.json",
-    "at": "2026-09-23 06:00",
+    "at": "2026-09-25 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -209,7 +209,7 @@
   {
     "편": "024",
     "job": "jobs/024.json",
-    "at": "2026-09-24 06:00",
+    "at": "2026-09-26 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -218,7 +218,7 @@
   {
     "편": "025",
     "job": "jobs/025.json",
-    "at": "2026-09-25 06:00",
+    "at": "2026-09-27 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -227,7 +227,7 @@
   {
     "편": "026",
     "job": "jobs/026.json",
-    "at": "2026-09-26 06:00",
+    "at": "2026-09-28 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -236,7 +236,7 @@
   {
     "편": "027",
     "job": "jobs/027.json",
-    "at": "2026-09-27 06:00",
+    "at": "2026-09-29 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
@@ -245,7 +245,7 @@
   {
     "편": "028",
     "job": "jobs/028.json",
-    "at": "2026-09-28 06:00",
+    "at": "2026-09-30 06:00",
     "posted": false,
     "posted_ts": null,
     "posted_at": null,
