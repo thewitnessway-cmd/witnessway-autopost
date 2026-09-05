@@ -204,6 +204,74 @@ def post_comment(access_token, video_id, text, dry=False):
         print(f"  [댓글 네트워크 오류] {e}"); return None
 
 # ----------------------------------------------------------------------
+# 책별 재생목록 자동 정리 (playlists / playlistItems · youtube.force-ssl 필요)
+# ----------------------------------------------------------------------
+def book_of(job):
+    """캡션의 '(1 Timothy 1:1 devotional)'에서 책 이름만 추출(장:절 제거)."""
+    if job.get("yt_playlist_book"):
+        return job["yt_playlist_book"].strip()
+    ref = _ref(job.get("caption", ""))
+    if not ref:
+        return ""
+    # 끝의 '1:1-2' 또는 '1' (장:절/장) 제거 → 책 이름만 (예: '1 Timothy')
+    return re.sub(r"\s+\d+(?:[:：]\d+(?:[-–]\d+)?)?\s*$", "", ref).strip()
+
+def playlist_title(book):
+    return f"{book} — Verse by Verse"
+
+def get_or_create_playlist(access_token, title, book, dry=False):
+    # 동일 제목의 기존 재생목록 검색(페이지네이션)
+    page = ""
+    for _ in range(6):
+        params = {"part": "snippet", "mine": "true", "maxResults": 50}
+        if page:
+            params["pageToken"] = page
+        res = api_get(access_token, "playlists", **params)
+        for it in res.get("items", []):
+            if it.get("snippet", {}).get("title", "").strip() == title:
+                return it["id"]
+        page = res.get("nextPageToken")
+        if not page:
+            break
+    if dry:
+        print(f"  [DRY-RUN] 재생목록 생성 예정: {title}"); return None
+    blog = f"{BLOG_HOME}?utm_source=youtube&utm_medium=playlist"
+    body = {
+        "snippet": {
+            "title": title,
+            "description": (f"{book} — short daily Bible devotionals, verse by verse.\n"
+                            f"Full verse-by-verse study (free): {blog}"),
+        },
+        "status": {"privacyStatus": "public"},
+    }
+    res = api_post(access_token, "playlists", body, part="snippet,status")
+    pid = res.get("id")
+    print(f"  [재생목록 생성] {title} (id={pid})")
+    return pid
+
+def add_to_book_playlist(access_token, video_id, job, dry=False):
+    book = book_of(job)
+    if not book:
+        print("  [재생목록 건너뜀] 캡션에서 책 이름을 못 찾음"); return
+    title = playlist_title(book)
+    try:
+        pid = get_or_create_playlist(access_token, title, book, dry=dry)
+        if dry:
+            print(f"  [DRY-RUN] '{title}'에 추가 예정"); return
+        body = {"snippet": {"playlistId": pid,
+                            "resourceId": {"kind": "youtube#video", "videoId": video_id}}}
+        api_post(access_token, "playlistItems", body, part="snippet")
+        print(f"  [재생목록 추가] {title} ← {video_id}")
+    except HTTPError as e:
+        b = e.read().decode(errors="replace")
+        if e.code in (401, 403):
+            print(f"  [재생목록 건너뜀] 권한 부족({e.code}) — force-ssl 스코프 확인. 업로드는 정상.")
+        else:
+            print(f"  [재생목록 오류] {e.code} {b[:200]} (업로드는 정상)")
+    except URLError as e:
+        print(f"  [재생목록 네트워크 오류] {e}")
+
+# ----------------------------------------------------------------------
 # 업로드 (resumable upload, 표준 라이브러리)
 # ----------------------------------------------------------------------
 def upload_video(access_token, video_path, title, description, tags, dry=False):
@@ -283,9 +351,10 @@ def run_job(access_token, job, ep, dry=False):
     desc = build_description(job, ep)
     tags = build_tags(job)
     vid = upload_video(access_token, video, title, desc, tags, dry=dry)
-    # 업로드 성공 시 자동 댓글(블로그 링크). 실패해도 업로드는 유지.
+    # 업로드 성공 시: 자동 댓글(블로그 링크) + 책별 재생목록 정리. 실패해도 업로드는 유지.
     if vid or dry:
         post_comment(access_token, vid, build_comment(job, ep), dry=dry)
+        add_to_book_playlist(access_token, vid, job, dry=dry)
     return vid
 
 # ----------------------------------------------------------------------
