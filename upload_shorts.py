@@ -12,7 +12,9 @@ YouTube Shorts로 올린다. 내레이션 + 저작권프리 음악이라 YouTube
 환경변수 (GitHub Actions Secret)
   YT_CLIENT_ID       OAuth 클라이언트 ID
   YT_CLIENT_SECRET   OAuth 클라이언트 보안 비밀번호
-  YT_REFRESH_TOKEN   리프레시 토큰(youtube.upload 범위)
+  YT_REFRESH_TOKEN   리프레시 토큰(youtube.upload + youtube.force-ssl 범위)
+                     force-ssl 은 업로드 후 자동 댓글(commentThreads.insert)에 필요.
+                     없으면 업로드는 되고 댓글만 건너뜀.
   QUEUE_FILE         큐 파일명 (기본 queue_shorts.json)
 
 사용법
@@ -36,6 +38,8 @@ SUBSCRIBE = "https://www.youtube.com/@witnessway?sub_confirmation=1"
 INSTAGRAM = "https://instagram.com/witness_way"
 CATEGORY_ID = "22"          # People & Blogs
 MIN_GAP_HOURS = 3           # 몰아 올리기 방지
+LANG = "en"                 # 영어 선언 → YouTube 자동 영어 자막 생성(정확·무보수)
+BLOG_HOME = "https://witnessway.com/en/"
 
 # ----------------------------------------------------------------------
 # 액세스 토큰 (리프레시 토큰 → 액세스 토큰)
@@ -74,11 +78,24 @@ def api_get(access_token, path, **params):
     with urlopen(req, timeout=60) as r:
         return json.loads(r.read().decode())
 
+def api_post(access_token, path, body, **params):
+    full = f"{API_URL}/{path}?{urlencode(params)}"
+    req = Request(full, data=json.dumps(body).encode(), method="POST",
+                  headers={"Authorization": f"Bearer {access_token}",
+                           "Content-Type": "application/json; charset=UTF-8"})
+    with urlopen(req, timeout=60) as r:
+        return json.loads(r.read().decode())
+
 # ----------------------------------------------------------------------
 # 제목·설명·태그 생성 (릴스 캡션 재사용)
 # ----------------------------------------------------------------------
 def _first_line(caption):
     return (caption or "").strip().split("\n", 1)[0].strip()
+
+def _ref(caption):
+    """캡션 첫 줄의 '(1 Timothy X:Y devotional)'에서 성경 구절만 추출."""
+    m = re.search(r"\(([^)]+?)\s+devotional\)", _first_line(caption), re.IGNORECASE)
+    return m.group(1).strip() if m else ""
 
 def build_title(job, ep):
     # 편별 수동 지정이 있으면 우선
@@ -144,6 +161,48 @@ def build_description(job, ep):
     parts.append("#Shorts #BibleStudy #Devotional #1Timothy #Christian")
     return "\n\n".join(parts)[:4900]
 
+def build_comment(job, ep):
+    """업로드 직후 자동으로 달 최상위 댓글(블로그 유입 + 참여 유도).
+    숏츠는 설명란보다 댓글 노출이 강함 → 블로그 링크의 실질 유입 지점."""
+    if job.get("yt_comment"):
+        return job["yt_comment"][:9000]
+    blog = (f"{BLOG_HOME}?utm_source=youtube&utm_medium=shorts_comment"
+            f"&utm_campaign={ep}")
+    ref = _ref(job.get("caption", ""))
+    if ref:
+        line = f"📖 Read the full {ref} study — free, verse by verse → {blog}"
+    else:
+        line = f"📖 Read the full verse-by-verse study — free → {blog}"
+    fc = (job.get("first_comment") or "").strip()
+    return (line + ("\n\n" + fc if fc else ""))[:9000]
+
+# ----------------------------------------------------------------------
+# 업로드 후: 자동 댓글(commentThreads.insert · youtube.force-ssl 필요)
+# ----------------------------------------------------------------------
+def post_comment(access_token, video_id, text, dry=False):
+    if not text:
+        return None
+    if dry:
+        print(f"  [DRY-RUN] 댓글 예정:\n    {text.splitlines()[0]}"); return None
+    body = {"snippet": {"videoId": video_id,
+                        "topLevelComment": {"snippet": {"textOriginal": text}}}}
+    try:
+        res = api_post(access_token, "commentThreads", body, part="snippet")
+        cid = res.get("id")
+        print(f"  [댓글 완료] 크리에이터 댓글 게시 (id={cid})")
+        print( "   ↳ 참고: '고정'은 API 미지원 → 앱에서 댓글 오른쪽 ⋮ → '고정'으로 1탭")
+        return cid
+    except HTTPError as e:
+        b = e.read().decode(errors="replace")
+        if e.code in (401, 403):
+            print(f"  [댓글 건너뜀] 권한 부족({e.code}) — 리프레시 토큰에 "
+                  "youtube.force-ssl 범위가 없을 수 있음. 업로드 자체는 정상.")
+        else:
+            print(f"  [댓글 오류] {e.code} {b[:200]}")
+        return None
+    except URLError as e:
+        print(f"  [댓글 네트워크 오류] {e}"); return None
+
 # ----------------------------------------------------------------------
 # 업로드 (resumable upload, 표준 라이브러리)
 # ----------------------------------------------------------------------
@@ -158,6 +217,9 @@ def upload_video(access_token, video_path, title, description, tags, dry=False):
             "description": description,
             "tags": tags,
             "categoryId": CATEGORY_ID,
+            # 영어 선언 → YouTube가 정확한 영어 자동 자막을 생성(SEO·접근성)
+            "defaultLanguage": LANG,
+            "defaultAudioLanguage": LANG,
         },
         "status": {
             "privacyStatus": "public",
@@ -220,7 +282,11 @@ def run_job(access_token, job, ep, dry=False):
     title = build_title(job, ep)
     desc = build_description(job, ep)
     tags = build_tags(job)
-    return upload_video(access_token, video, title, desc, tags, dry=dry)
+    vid = upload_video(access_token, video, title, desc, tags, dry=dry)
+    # 업로드 성공 시 자동 댓글(블로그 링크). 실패해도 업로드는 유지.
+    if vid or dry:
+        post_comment(access_token, vid, build_comment(job, ep), dry=dry)
+    return vid
 
 # ----------------------------------------------------------------------
 # 큐: 예정 시각 된 다음 편 1개 업로드
