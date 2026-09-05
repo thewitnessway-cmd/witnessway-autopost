@@ -2,7 +2,11 @@
   {
     "편": "shorts001",
     "job": "jobs/reel001.json",
-    "at": "2026-09-02 20:00"
+    "at": "2026-09-02 20:00",
+    "posted": true,
+    "posted_ts": 1788622134.1082292,
+    "posted_at": "2026-09-05 08:28:54",
+    "video_id": "tUjtua54-QA"
   },
   {
     "편": "shorts002",
