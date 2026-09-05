@@ -81,11 +81,26 @@ def _first_line(caption):
     return (caption or "").strip().split("\n", 1)[0].strip()
 
 def build_title(job, ep):
-    t = job.get("yt_title") or _first_line(job.get("caption", "")) or "Witness Way — Bible Devotional"
-    tag = " #Shorts"
-    if len(t) + len(tag) <= 100:
-        t = t + tag
-    return t[:100]
+    # 편별 수동 지정이 있으면 우선
+    if job.get("yt_title"):
+        t = job["yt_title"].strip()
+        return t if "#Shorts" in t or len(t) + 8 > 100 else (t + " #Shorts")[:100]
+    first = _first_line(job.get("caption", ""))
+    # 성경 구절 추출: "(...  devotional)" 안의 참조 (책 무관)
+    m = re.search(r"\(([^)]+?)\s+devotional\)", first, re.IGNORECASE)
+    ref = m.group(1).strip() if m else ""
+    # 훅 = 첫 줄에서 "(... devotional)" 괄호 제거
+    hook = re.sub(r"\s*\([^)]*devotional\)\s*", "", first, flags=re.IGNORECASE).strip()
+    if ref:
+        # 키워드(구절)를 앞에 배치 → 검색 SEO
+        base = f"{ref} — {hook}"
+        suffix = " | Bible Devotional #Shorts"
+        if len(base) + len(suffix) <= 100:
+            return base + suffix
+        short = " #Shorts"
+        return (base[:100 - len(short)]).rstrip() + short
+    t = hook or "Witness Way — Bible Devotional"
+    return (t + " #Shorts")[:100] if len(t) + 8 <= 100 else t[:100]
 
 def build_tags(job):
     if job.get("yt_tags"):
@@ -107,16 +122,27 @@ def build_tags(job):
     return result
 
 def build_description(job, ep):
-    cap = job.get("caption", "").strip()
     blog = (f"https://witnessway.com/en/?utm_source=youtube&utm_medium=shorts"
             f"&utm_campaign={ep}")
-    cap = cap.replace("link in bio", blog)
-    desc = (job.get("yt_description") or cap)
-    desc += (f"\n\n📖 Full verse-by-verse study → {blog}"
-             f"\n🔔 Subscribe → {SUBSCRIBE}"
-             f"\n📱 Instagram → {INSTAGRAM}"
-             f"\n\n#Shorts #BibleStudy #Devotional #1Timothy #Christian")
-    return desc[:4900]   # 설명 5000자 제한 여유
+    if job.get("yt_description"):
+        return job["yt_description"][:4900]
+    cap = job.get("caption", "").strip()
+    # 캡션을 블록(빈 줄 기준)으로 분해 → 인스타용 CTA/해시태그 중복 제거
+    blocks = [b.strip() for b in cap.split("\n\n") if b.strip()]
+    hook = blocks[0] if blocks else _first_line(cap)
+    body = blocks[1] if len(blocks) > 1 else ""
+    comment = ""
+    for b in blocks:
+        for ln in b.split("\n"):
+            if ln.strip().startswith("💬"):
+                comment = ln.strip()
+    parts = [p for p in (hook, body) if p]
+    if comment:
+        parts.append(comment)
+    parts.append(f"📖 Full verse-by-verse study → {blog}")
+    parts.append(f"🔔 Subscribe → {SUBSCRIBE}\n📱 Instagram → {INSTAGRAM}")
+    parts.append("#Shorts #BibleStudy #Devotional #1Timothy #Christian")
+    return "\n\n".join(parts)[:4900]
 
 # ----------------------------------------------------------------------
 # 업로드 (resumable upload, 표준 라이브러리)
