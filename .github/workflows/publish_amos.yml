@@ -1,0 +1,41 @@
+name: 유튜브 숏츠 자동 업로드 — 아모스 (Witness Way)
+
+on:
+  schedule:
+    - cron: '35 * * * *'       # 매시 35분(UTC) 백업 점검 (1Tim :25, 릴스와 겹치지 않게 오프셋)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-amos
+  cancel-in-progress: false
+
+jobs:
+  publish-amos:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/Los_Angeles                 # 예약 시각(at)을 미국 서부(LA)시로 해석
+      QUEUE_FILE: queue_amos.json             # 아모스 전용 큐 (7:00 AM PT)
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: 예정 아모스 숏츠 업로드
+        run: python3 upload_shorts.py --next
+      - name: 아모스 큐 상태 저장(커밋)
+        run: |
+          if ! git diff --quiet -- queue_amos.json; then
+            git config user.name  "witnessway-bot"
+            git config user.email "bot@users.noreply.github.com"
+            git add queue_amos.json
+            git commit -m "chore: 아모스 큐 갱신 [skip ci]"
+            git push
+          else
+            echo "변경 없음"
+          fi
