@@ -2,7 +2,11 @@
   {
     "편": "amos01",
     "job": "jobs/amos01.json",
-    "at": "2026-09-09 07:00"
+    "at": "2026-09-09 07:00",
+    "posted": true,
+    "posted_ts": 1788965200.293183,
+    "posted_at": "2026-09-09 07:46:40",
+    "video_id": "Urp5BdpL2nA"
   },
   {
     "편": "amos02",
