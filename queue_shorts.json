@@ -65,7 +65,11 @@
   {
     "편": "shorts008",
     "job": "jobs/reel008.json",
-    "at": "2026-09-10 18:00"
+    "at": "2026-09-10 18:00",
+    "posted": true,
+    "posted_ts": 1789102394.125805,
+    "posted_at": "2026-09-10 21:53:14",
+    "video_id": "jQKq2yIYGug"
   },
   {
     "편": "shorts009",
