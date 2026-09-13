@@ -93,10 +93,10 @@
     "편": "011",
     "job": "jobs/011.json",
     "at": "2026-09-13 06:00",
-    "posted": false,
-    "posted_ts": null,
-    "posted_at": null,
-    "media_id": null
+    "posted": true,
+    "posted_ts": 1789304454.1667368,
+    "posted_at": "2026-09-13 06:00:54",
+    "media_id": "17933949408385479"
   },
   {
     "편": "012",
