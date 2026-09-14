@@ -173,8 +173,12 @@ def build_comment(job, ep):
         line = f"📖 Read the full {ref} study — free, verse by verse → {blog}"
     else:
         line = f"📖 Read the full verse-by-verse study — free → {blog}"
+    subscribe = f"🔔 New Bible devotional every day — subscribe → {SUBSCRIBE}"
     fc = (job.get("first_comment") or "").strip()
-    return (line + ("\n\n" + fc if fc else ""))[:9000]
+    parts = [line, subscribe]
+    if fc:
+        parts.append(fc)
+    return "\n\n".join(parts)[:9000]
 
 # ----------------------------------------------------------------------
 # 업로드 후: 자동 댓글(commentThreads.insert · youtube.force-ssl 필요)
