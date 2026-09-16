@@ -120,10 +120,10 @@
     "편": "014",
     "job": "jobs/014.json",
     "at": "2026-09-16 06:00",
-    "posted": false,
-    "posted_ts": null,
-    "posted_at": null,
-    "media_id": null
+    "posted": true,
+    "posted_ts": 1789563625.0120592,
+    "posted_at": "2026-09-16 06:00:25",
+    "media_id": "17991288132031162"
   },
   {
     "편": "015",
