@@ -137,7 +137,11 @@
   {
     "편": "shorts016",
     "job": "jobs/reel016.json",
-    "at": "2026-09-18 18:00"
+    "at": "2026-09-18 18:00",
+    "posted": true,
+    "posted_ts": 1789779624.7949467,
+    "posted_at": "2026-09-18 18:00:24",
+    "video_id": "RCD7SOWTqCk"
   },
   {
     "편": "shorts017",
