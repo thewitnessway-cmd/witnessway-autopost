@@ -110,7 +110,11 @@
   {
     "편": "amos13",
     "job": "jobs/amos13.json",
-    "at": "2026-09-21 07:00"
+    "at": "2026-09-21 07:00",
+    "posted": true,
+    "posted_ts": 1789999224.5035207,
+    "posted_at": "2026-09-21 07:00:24",
+    "video_id": "loxN0tUOnwE"
   },
   {
     "편": "amos14",
