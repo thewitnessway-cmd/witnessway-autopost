@@ -183,10 +183,10 @@
     "편": "021",
     "job": "jobs/021.json",
     "at": "2026-09-23 06:00",
-    "posted": false,
-    "posted_ts": null,
-    "posted_at": null,
-    "media_id": null
+    "posted": true,
+    "posted_ts": 1790168429.4484115,
+    "posted_at": "2026-09-23 06:00:29",
+    "media_id": "18122842933906621"
   },
   {
     "편": "022",
