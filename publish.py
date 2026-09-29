@@ -55,7 +55,9 @@ def _api(method, path, **params):
                 return json.loads(r.read().decode())
         except HTTPError as e:
             body = e.read().decode(errors="replace")
-            transient = (e.code >= 500) or ('"code":1' in body) or ('is_transient":true' in body)
+            low = body.lower()
+            transient = (e.code >= 500) or ('"code":1' in body) or ('is_transient":true' in body) \
+                        or ('fetch' in low)   # IG가 raw 이미지/영상을 못 가져온 일시 오류도 재시도
             if transient and attempt < len(delays) - 1:
                 print(f"    (인스타 일시 오류 {e.code}, {delays[attempt+1]}초 후 재시도 {attempt+1})")
                 continue
@@ -147,13 +149,21 @@ def _publish(cfg, creation_id):
     token, ig = cfg["access_token"], cfg["ig_user_id"]
     r = api_post(f"{ig}/media_publish", creation_id=creation_id, access_token=token)
     mid = r["id"]
-    info = api_get(mid, fields="permalink", access_token=token)
-    print(f"  [게시 완료] {info.get('permalink','')}  (media_id={mid})")
+    # 이 시점에 게시는 이미 LIVE. 이후 조회 실패가 발행을 되돌리게 두면 안 됨(중복 발행 방지).
+    try:
+        info = api_get(mid, fields="permalink", access_token=token)
+        print(f"  [게시 완료] {info.get('permalink','')}  (media_id={mid})")
+    except (SystemExit, Exception) as e:
+        print(f"  [게시 완료] media_id={mid} (permalink 조회 실패는 무시함: {e})")
     return mid
 
 def add_first_comment(cfg, mid, msg):
-    r = api_post(f"{mid}/comments", message=msg, access_token=cfg["access_token"])
-    print(f"  [첫 댓글 완료] {r.get('id')}  ※ 고정은 인스타 앱에서 탭 1회(API 미지원)")
+    # 게시는 이미 끝난 뒤 호출됨 → 댓글 실패로 전체 실행을 죽이면 안 됨(중복 재발행 방지).
+    try:
+        r = api_post(f"{mid}/comments", message=msg, access_token=cfg["access_token"])
+        print(f"  [첫 댓글 완료] {r.get('id')}  ※ 고정은 인스타 앱에서 탭 1회(API 미지원)")
+    except (SystemExit, Exception) as e:
+        print(f"  [경고] 첫 댓글 실패 — 게시는 이미 완료됨, 무시하고 진행: {e}")
 
 def run_job(cfg, job, dry=False):
     if job["type"] == "carousel":
