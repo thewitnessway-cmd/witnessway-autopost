@@ -246,9 +246,9 @@
     "편": "028",
     "job": "jobs/028.json",
     "at": "2026-09-30 06:00",
-    "posted": false,
-    "posted_ts": null,
-    "posted_at": null,
-    "media_id": null
+    "posted": true,
+    "posted_ts": 1790773231.7273335,
+    "posted_at": "2026-09-30 06:00:31",
+    "media_id": "18120667006731607"
   }
 ]
