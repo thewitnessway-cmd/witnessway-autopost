@@ -236,7 +236,11 @@
   {
     "편": "shorts027",
     "job": "jobs/reel027.json",
-    "at": "2026-09-29 18:00"
+    "at": "2026-09-29 18:00",
+    "posted": true,
+    "posted_ts": 1790730029.2788007,
+    "posted_at": "2026-09-29 18:00:29",
+    "video_id": "fareaJZR_l0"
   },
   {
     "편": "shorts028",
