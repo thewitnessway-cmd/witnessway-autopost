@@ -322,5 +322,77 @@
     "posted_ts": null,
     "posted_at": null,
     "media_id": null
+  },
+  {
+    "편": "gal007",
+    "job": "jobs/gal007.json",
+    "at": "2026-10-09 06:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "gal008",
+    "job": "jobs/gal008.json",
+    "at": "2026-10-10 06:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "gal009",
+    "job": "jobs/gal009.json",
+    "at": "2026-10-11 06:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "gal010",
+    "job": "jobs/gal010.json",
+    "at": "2026-10-12 06:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "gal011",
+    "job": "jobs/gal011.json",
+    "at": "2026-10-13 06:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "gal012",
+    "job": "jobs/gal012.json",
+    "at": "2026-10-14 06:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "gal013",
+    "job": "jobs/gal013.json",
+    "at": "2026-10-15 06:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "gal014",
+    "job": "jobs/gal014.json",
+    "at": "2026-10-16 06:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
   }
 ]
