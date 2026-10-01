@@ -354,5 +354,41 @@
     "posted_ts": null,
     "posted_at": null,
     "media_id": null
+  },
+  {
+    "편": "galr011",
+    "job": "jobs/galr011.json",
+    "at": "2026-10-13 20:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "galr012",
+    "job": "jobs/galr012.json",
+    "at": "2026-10-14 20:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "galr013",
+    "job": "jobs/galr013.json",
+    "at": "2026-10-15 20:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "galr014",
+    "job": "jobs/galr014.json",
+    "at": "2026-10-16 20:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
   }
 ]
