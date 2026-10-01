@@ -318,5 +318,41 @@
     "posted_ts": null,
     "posted_at": null,
     "media_id": null
+  },
+  {
+    "편": "galr007",
+    "job": "jobs/galr007.json",
+    "at": "2026-10-09 20:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "galr008",
+    "job": "jobs/galr008.json",
+    "at": "2026-10-10 20:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "galr009",
+    "job": "jobs/galr009.json",
+    "at": "2026-10-11 20:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "galr010",
+    "job": "jobs/galr010.json",
+    "at": "2026-10-12 20:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
   }
 ]
