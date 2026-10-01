@@ -255,10 +255,10 @@
     "편": "galF1",
     "job": "jobs/galF1.json",
     "at": "2026-10-01 06:00",
-    "posted": false,
-    "posted_ts": null,
-    "posted_at": null,
-    "media_id": null
+    "posted": true,
+    "posted_ts": 1790859688.6935225,
+    "posted_at": "2026-10-01 06:01:28",
+    "media_id": "18117506195073713"
   },
   {
     "편": "galF2",
