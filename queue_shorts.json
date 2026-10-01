@@ -1,254 +1,386 @@
 [
-  {
-    "편": "shorts001",
-    "job": "jobs/reel001.json",
-    "at": "2026-09-02 18:00",
-    "posted": true,
-    "posted_ts": 1788622134.1082292,
-    "posted_at": "2026-09-05 08:28:54",
-    "video_id": "tUjtua54-QA"
-  },
-  {
-    "편": "shorts002",
-    "job": "jobs/reel002.json",
-    "at": "2026-09-04 18:00",
-    "posted": true,
-    "posted_ts": 1788635678.796441,
-    "posted_at": "2026-09-05 12:14:38",
-    "video_id": "XX3DE3nKqco"
-  },
-  {
-    "편": "shorts003",
-    "job": "jobs/reel003.json",
-    "at": "2026-09-05 18:00",
-    "posted": true,
-    "posted_ts": 1788656799.7589767,
-    "posted_at": "2026-09-05 18:06:39",
-    "video_id": "6jiEV1GPP14"
-  },
-  {
-    "편": "shorts004",
-    "job": "jobs/reel004.json",
-    "at": "2026-09-06 18:00",
-    "posted": true,
-    "posted_ts": 1788757023.5090604,
-    "posted_at": "2026-09-06 21:57:03",
-    "video_id": "qhS8h9R8Xa4"
-  },
-  {
-    "편": "shorts005",
-    "job": "jobs/reel005.json",
-    "at": "2026-09-07 18:00",
-    "posted": true,
-    "posted_ts": 1788843193.7731016,
-    "posted_at": "2026-09-07 21:53:13",
-    "video_id": "zkGar4vK-pI"
-  },
-  {
-    "편": "shorts006",
-    "job": "jobs/reel006.json",
-    "at": "2026-09-08 18:00",
-    "posted": true,
-    "posted_ts": 1788929804.3122532,
-    "posted_at": "2026-09-08 21:56:44",
-    "video_id": "8wv-gKDLLkM"
-  },
-  {
-    "편": "shorts007",
-    "job": "jobs/reel007.json",
-    "at": "2026-09-09 18:00",
-    "posted": true,
-    "posted_ts": 1789016198.002314,
-    "posted_at": "2026-09-09 21:56:38",
-    "video_id": "4nHrI9m3BE8"
-  },
-  {
-    "편": "shorts008",
-    "job": "jobs/reel008.json",
-    "at": "2026-09-10 18:00",
-    "posted": true,
-    "posted_ts": 1789102394.125805,
-    "posted_at": "2026-09-10 21:53:14",
-    "video_id": "jQKq2yIYGug"
-  },
-  {
-    "편": "shorts009",
-    "job": "jobs/reel009.json",
-    "at": "2026-09-11 18:00",
-    "posted": true,
-    "posted_ts": 1789188619.1673577,
-    "posted_at": "2026-09-11 21:50:19",
-    "video_id": "JINW_IgBV_U"
-  },
-  {
-    "편": "shorts010",
-    "job": "jobs/reel010.json",
-    "at": "2026-09-12 18:00",
-    "posted": true,
-    "posted_ts": 1789275654.224072,
-    "posted_at": "2026-09-12 22:00:54",
-    "video_id": "fQfzYKA_2TE"
-  },
-  {
-    "편": "shorts011",
-    "job": "jobs/reel011.json",
-    "at": "2026-09-13 18:00",
-    "posted": true,
-    "posted_ts": 1789348516.1567695,
-    "posted_at": "2026-09-13 18:15:16",
-    "video_id": "OXr2h6yNUtY"
-  },
-  {
-    "편": "shorts012",
-    "job": "jobs/reel012.json",
-    "at": "2026-09-14 18:00",
-    "posted": true,
-    "posted_ts": 1789434020.1435664,
-    "posted_at": "2026-09-14 18:00:20",
-    "video_id": "yrIdENhrG7Q"
-  },
-  {
-    "편": "shorts013",
-    "job": "jobs/reel013.json",
-    "at": "2026-09-15 18:00",
-    "posted": true,
-    "posted_ts": 1789520422.324786,
-    "posted_at": "2026-09-15 18:00:22",
-    "video_id": "5k4hDIeZcPs"
-  },
-  {
-    "편": "shorts014",
-    "job": "jobs/reel014.json",
-    "at": "2026-09-16 18:00",
-    "posted": true,
-    "posted_ts": 1789606823.4861577,
-    "posted_at": "2026-09-16 18:00:23",
-    "video_id": "b991oHqml-k"
-  },
-  {
-    "편": "shorts015",
-    "job": "jobs/reel015.json",
-    "at": "2026-09-17 18:00",
-    "posted": true,
-    "posted_ts": 1789693223.3946047,
-    "posted_at": "2026-09-17 18:00:23",
-    "video_id": "Pn75ROTxSn0"
-  },
-  {
-    "편": "shorts016",
-    "job": "jobs/reel016.json",
-    "at": "2026-09-18 18:00",
-    "posted": true,
-    "posted_ts": 1789779624.7949467,
-    "posted_at": "2026-09-18 18:00:24",
-    "video_id": "RCD7SOWTqCk"
-  },
-  {
-    "편": "shorts017",
-    "job": "jobs/reel017.json",
-    "at": "2026-09-19 18:00",
-    "posted": true,
-    "posted_ts": 1789866024.6484592,
-    "posted_at": "2026-09-19 18:00:24",
-    "video_id": "nNb6htoBvbk"
-  },
-  {
-    "편": "shorts018",
-    "job": "jobs/reel018.json",
-    "at": "2026-09-20 18:00",
-    "posted": true,
-    "posted_ts": 1789952427.3893785,
-    "posted_at": "2026-09-20 18:00:27",
-    "video_id": "3ftt0zfRfx8"
-  },
-  {
-    "편": "shorts019",
-    "job": "jobs/reel019.json",
-    "at": "2026-09-21 18:00",
-    "posted": true,
-    "posted_ts": 1790038823.6996908,
-    "posted_at": "2026-09-21 18:00:23",
-    "video_id": "bjN2ZkDkdUM"
-  },
-  {
-    "편": "shorts020",
-    "job": "jobs/reel020.json",
-    "at": "2026-09-22 18:00",
-    "posted": true,
-    "posted_ts": 1790125221.7446904,
-    "posted_at": "2026-09-22 18:00:21",
-    "video_id": "U7NbL8Cd0Wk"
-  },
-  {
-    "편": "shorts021",
-    "job": "jobs/reel021.json",
-    "at": "2026-09-23 18:00",
-    "posted": true,
-    "posted_ts": 1790211631.050313,
-    "posted_at": "2026-09-23 18:00:31",
-    "video_id": "WJxTTOVmqyU"
-  },
-  {
-    "편": "shorts022",
-    "job": "jobs/reel022.json",
-    "at": "2026-09-24 18:00",
-    "posted": true,
-    "posted_ts": 1790298029.7335985,
-    "posted_at": "2026-09-24 18:00:29",
-    "video_id": "PPRRsSjEHwY"
-  },
-  {
-    "편": "shorts023",
-    "job": "jobs/reel023.json",
-    "at": "2026-09-25 18:00",
-    "posted": true,
-    "posted_ts": 1790384428.8794405,
-    "posted_at": "2026-09-25 18:00:28",
-    "video_id": "DTOt76Llz5Y"
-  },
-  {
-    "편": "shorts024",
-    "job": "jobs/reel024.json",
-    "at": "2026-09-26 18:00",
-    "posted": true,
-    "posted_ts": 1790470824.1524947,
-    "posted_at": "2026-09-26 18:00:24",
-    "video_id": "r37KO7V4N8c"
-  },
-  {
-    "편": "shorts025",
-    "job": "jobs/reel025.json",
-    "at": "2026-09-27 18:00",
-    "posted": true,
-    "posted_ts": 1790557224.6466916,
-    "posted_at": "2026-09-27 18:00:24",
-    "video_id": "_YyCmfEW73A"
-  },
-  {
-    "편": "shorts026",
-    "job": "jobs/reel026.json",
-    "at": "2026-09-28 18:00",
-    "posted": true,
-    "posted_ts": 1790643625.2944112,
-    "posted_at": "2026-09-28 18:00:25",
-    "video_id": "jmmWk5d7Nwc"
-  },
-  {
-    "편": "shorts027",
-    "job": "jobs/reel027.json",
-    "at": "2026-09-29 18:00",
-    "posted": true,
-    "posted_ts": 1790730029.2788007,
-    "posted_at": "2026-09-29 18:00:29",
-    "video_id": "fareaJZR_l0"
-  },
-  {
-    "편": "shorts028",
-    "job": "jobs/reel028.json",
-    "at": "2026-09-30 18:00",
-    "posted": true,
-    "posted_ts": 1790816479.8714552,
-    "posted_at": "2026-09-30 18:01:19",
-    "video_id": "DkzwXuyEn_Y"
-  }
+ {
+  "편": "shorts001",
+  "job": "jobs/reel001.json",
+  "at": "2026-09-02 18:00",
+  "posted": true,
+  "posted_ts": 1788622134.1082292,
+  "posted_at": "2026-09-05 08:28:54",
+  "video_id": "tUjtua54-QA"
+ },
+ {
+  "편": "shorts002",
+  "job": "jobs/reel002.json",
+  "at": "2026-09-04 18:00",
+  "posted": true,
+  "posted_ts": 1788635678.796441,
+  "posted_at": "2026-09-05 12:14:38",
+  "video_id": "XX3DE3nKqco"
+ },
+ {
+  "편": "shorts003",
+  "job": "jobs/reel003.json",
+  "at": "2026-09-05 18:00",
+  "posted": true,
+  "posted_ts": 1788656799.7589767,
+  "posted_at": "2026-09-05 18:06:39",
+  "video_id": "6jiEV1GPP14"
+ },
+ {
+  "편": "shorts004",
+  "job": "jobs/reel004.json",
+  "at": "2026-09-06 18:00",
+  "posted": true,
+  "posted_ts": 1788757023.5090604,
+  "posted_at": "2026-09-06 21:57:03",
+  "video_id": "qhS8h9R8Xa4"
+ },
+ {
+  "편": "shorts005",
+  "job": "jobs/reel005.json",
+  "at": "2026-09-07 18:00",
+  "posted": true,
+  "posted_ts": 1788843193.7731016,
+  "posted_at": "2026-09-07 21:53:13",
+  "video_id": "zkGar4vK-pI"
+ },
+ {
+  "편": "shorts006",
+  "job": "jobs/reel006.json",
+  "at": "2026-09-08 18:00",
+  "posted": true,
+  "posted_ts": 1788929804.3122532,
+  "posted_at": "2026-09-08 21:56:44",
+  "video_id": "8wv-gKDLLkM"
+ },
+ {
+  "편": "shorts007",
+  "job": "jobs/reel007.json",
+  "at": "2026-09-09 18:00",
+  "posted": true,
+  "posted_ts": 1789016198.002314,
+  "posted_at": "2026-09-09 21:56:38",
+  "video_id": "4nHrI9m3BE8"
+ },
+ {
+  "편": "shorts008",
+  "job": "jobs/reel008.json",
+  "at": "2026-09-10 18:00",
+  "posted": true,
+  "posted_ts": 1789102394.125805,
+  "posted_at": "2026-09-10 21:53:14",
+  "video_id": "jQKq2yIYGug"
+ },
+ {
+  "편": "shorts009",
+  "job": "jobs/reel009.json",
+  "at": "2026-09-11 18:00",
+  "posted": true,
+  "posted_ts": 1789188619.1673577,
+  "posted_at": "2026-09-11 21:50:19",
+  "video_id": "JINW_IgBV_U"
+ },
+ {
+  "편": "shorts010",
+  "job": "jobs/reel010.json",
+  "at": "2026-09-12 18:00",
+  "posted": true,
+  "posted_ts": 1789275654.224072,
+  "posted_at": "2026-09-12 22:00:54",
+  "video_id": "fQfzYKA_2TE"
+ },
+ {
+  "편": "shorts011",
+  "job": "jobs/reel011.json",
+  "at": "2026-09-13 18:00",
+  "posted": true,
+  "posted_ts": 1789348516.1567695,
+  "posted_at": "2026-09-13 18:15:16",
+  "video_id": "OXr2h6yNUtY"
+ },
+ {
+  "편": "shorts012",
+  "job": "jobs/reel012.json",
+  "at": "2026-09-14 18:00",
+  "posted": true,
+  "posted_ts": 1789434020.1435664,
+  "posted_at": "2026-09-14 18:00:20",
+  "video_id": "yrIdENhrG7Q"
+ },
+ {
+  "편": "shorts013",
+  "job": "jobs/reel013.json",
+  "at": "2026-09-15 18:00",
+  "posted": true,
+  "posted_ts": 1789520422.324786,
+  "posted_at": "2026-09-15 18:00:22",
+  "video_id": "5k4hDIeZcPs"
+ },
+ {
+  "편": "shorts014",
+  "job": "jobs/reel014.json",
+  "at": "2026-09-16 18:00",
+  "posted": true,
+  "posted_ts": 1789606823.4861577,
+  "posted_at": "2026-09-16 18:00:23",
+  "video_id": "b991oHqml-k"
+ },
+ {
+  "편": "shorts015",
+  "job": "jobs/reel015.json",
+  "at": "2026-09-17 18:00",
+  "posted": true,
+  "posted_ts": 1789693223.3946047,
+  "posted_at": "2026-09-17 18:00:23",
+  "video_id": "Pn75ROTxSn0"
+ },
+ {
+  "편": "shorts016",
+  "job": "jobs/reel016.json",
+  "at": "2026-09-18 18:00",
+  "posted": true,
+  "posted_ts": 1789779624.7949467,
+  "posted_at": "2026-09-18 18:00:24",
+  "video_id": "RCD7SOWTqCk"
+ },
+ {
+  "편": "shorts017",
+  "job": "jobs/reel017.json",
+  "at": "2026-09-19 18:00",
+  "posted": true,
+  "posted_ts": 1789866024.6484592,
+  "posted_at": "2026-09-19 18:00:24",
+  "video_id": "nNb6htoBvbk"
+ },
+ {
+  "편": "shorts018",
+  "job": "jobs/reel018.json",
+  "at": "2026-09-20 18:00",
+  "posted": true,
+  "posted_ts": 1789952427.3893785,
+  "posted_at": "2026-09-20 18:00:27",
+  "video_id": "3ftt0zfRfx8"
+ },
+ {
+  "편": "shorts019",
+  "job": "jobs/reel019.json",
+  "at": "2026-09-21 18:00",
+  "posted": true,
+  "posted_ts": 1790038823.6996908,
+  "posted_at": "2026-09-21 18:00:23",
+  "video_id": "bjN2ZkDkdUM"
+ },
+ {
+  "편": "shorts020",
+  "job": "jobs/reel020.json",
+  "at": "2026-09-22 18:00",
+  "posted": true,
+  "posted_ts": 1790125221.7446904,
+  "posted_at": "2026-09-22 18:00:21",
+  "video_id": "U7NbL8Cd0Wk"
+ },
+ {
+  "편": "shorts021",
+  "job": "jobs/reel021.json",
+  "at": "2026-09-23 18:00",
+  "posted": true,
+  "posted_ts": 1790211631.050313,
+  "posted_at": "2026-09-23 18:00:31",
+  "video_id": "WJxTTOVmqyU"
+ },
+ {
+  "편": "shorts022",
+  "job": "jobs/reel022.json",
+  "at": "2026-09-24 18:00",
+  "posted": true,
+  "posted_ts": 1790298029.7335985,
+  "posted_at": "2026-09-24 18:00:29",
+  "video_id": "PPRRsSjEHwY"
+ },
+ {
+  "편": "shorts023",
+  "job": "jobs/reel023.json",
+  "at": "2026-09-25 18:00",
+  "posted": true,
+  "posted_ts": 1790384428.8794405,
+  "posted_at": "2026-09-25 18:00:28",
+  "video_id": "DTOt76Llz5Y"
+ },
+ {
+  "편": "shorts024",
+  "job": "jobs/reel024.json",
+  "at": "2026-09-26 18:00",
+  "posted": true,
+  "posted_ts": 1790470824.1524947,
+  "posted_at": "2026-09-26 18:00:24",
+  "video_id": "r37KO7V4N8c"
+ },
+ {
+  "편": "shorts025",
+  "job": "jobs/reel025.json",
+  "at": "2026-09-27 18:00",
+  "posted": true,
+  "posted_ts": 1790557224.6466916,
+  "posted_at": "2026-09-27 18:00:24",
+  "video_id": "_YyCmfEW73A"
+ },
+ {
+  "편": "shorts026",
+  "job": "jobs/reel026.json",
+  "at": "2026-09-28 18:00",
+  "posted": true,
+  "posted_ts": 1790643625.2944112,
+  "posted_at": "2026-09-28 18:00:25",
+  "video_id": "jmmWk5d7Nwc"
+ },
+ {
+  "편": "shorts027",
+  "job": "jobs/reel027.json",
+  "at": "2026-09-29 18:00",
+  "posted": true,
+  "posted_ts": 1790730029.2788007,
+  "posted_at": "2026-09-29 18:00:29",
+  "video_id": "fareaJZR_l0"
+ },
+ {
+  "편": "shorts028",
+  "job": "jobs/reel028.json",
+  "at": "2026-09-30 18:00",
+  "posted": true,
+  "posted_ts": 1790816479.8714552,
+  "posted_at": "2026-09-30 18:01:19",
+  "video_id": "DkzwXuyEn_Y"
+ },
+ {
+  "편": "galsF1",
+  "job": "jobs/galrF1.json",
+  "at": "2026-10-01 18:00",
+  "posted": false
+ },
+ {
+  "편": "galsF2",
+  "job": "jobs/galrF2.json",
+  "at": "2026-10-02 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals001",
+  "job": "jobs/galr001.json",
+  "at": "2026-10-03 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals002",
+  "job": "jobs/galr002.json",
+  "at": "2026-10-04 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals003",
+  "job": "jobs/galr003.json",
+  "at": "2026-10-05 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals004",
+  "job": "jobs/galr004.json",
+  "at": "2026-10-06 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals005",
+  "job": "jobs/galr005.json",
+  "at": "2026-10-07 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals006",
+  "job": "jobs/galr006.json",
+  "at": "2026-10-08 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals007",
+  "job": "jobs/galr007.json",
+  "at": "2026-10-09 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals008",
+  "job": "jobs/galr008.json",
+  "at": "2026-10-10 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals009",
+  "job": "jobs/galr009.json",
+  "at": "2026-10-11 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals010",
+  "job": "jobs/galr010.json",
+  "at": "2026-10-12 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals011",
+  "job": "jobs/galr011.json",
+  "at": "2026-10-13 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals012",
+  "job": "jobs/galr012.json",
+  "at": "2026-10-14 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals013",
+  "job": "jobs/galr013.json",
+  "at": "2026-10-15 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals014",
+  "job": "jobs/galr014.json",
+  "at": "2026-10-16 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals015",
+  "job": "jobs/galr015.json",
+  "at": "2026-10-17 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals016",
+  "job": "jobs/galr016.json",
+  "at": "2026-10-18 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals017",
+  "job": "jobs/galr017.json",
+  "at": "2026-10-19 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals018",
+  "job": "jobs/galr018.json",
+  "at": "2026-10-20 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals019",
+  "job": "jobs/galr019.json",
+  "at": "2026-10-21 18:00",
+  "posted": false
+ },
+ {
+  "편": "gals020",
+  "job": "jobs/galr020.json",
+  "at": "2026-10-22 18:00",
+  "posted": false
+ }
 ]
