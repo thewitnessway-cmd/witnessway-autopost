@@ -426,5 +426,23 @@
     "posted_ts": null,
     "posted_at": null,
     "media_id": null
+  },
+  {
+    "편": "galr019",
+    "job": "jobs/galr019.json",
+    "at": "2026-10-21 20:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
+  },
+  {
+    "편": "galr020",
+    "job": "jobs/galr020.json",
+    "at": "2026-10-22 20:00",
+    "posted": false,
+    "posted_ts": null,
+    "posted_at": null,
+    "media_id": null
   }
 ]
