@@ -309,7 +309,10 @@
     "편": "gals005",
     "job": "jobs/galr005.json",
     "at": "2026-10-07 18:00",
-    "posted": false
+    "posted": true,
+    "posted_ts": 1791421278.65162,
+    "posted_at": "2026-10-07 18:01:18",
+    "video_id": "3WHUgPJp0os"
   },
   {
     "편": "gals006",
