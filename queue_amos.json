@@ -272,7 +272,11 @@
   {
     "편": "amos31",
     "job": "jobs/amos31.json",
-    "at": "2026-10-09 07:00"
+    "at": "2026-10-09 07:00",
+    "posted": true,
+    "posted_ts": 1791554482.9277334,
+    "posted_at": "2026-10-09 07:01:22",
+    "video_id": "xDPLQdE5XBU"
   },
   {
     "편": "amos32",
