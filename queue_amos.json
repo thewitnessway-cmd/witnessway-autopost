@@ -317,6 +317,10 @@
   {
     "편": "amos36",
     "job": "jobs/amos36.json",
-    "at": "2026-10-14 07:00"
+    "at": "2026-10-14 07:00",
+    "posted": true,
+    "posted_ts": 1791986492.7387602,
+    "posted_at": "2026-10-14 07:01:32",
+    "video_id": "bcfO8-dBCVA"
   }
 ]
