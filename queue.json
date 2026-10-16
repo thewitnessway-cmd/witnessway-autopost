@@ -390,10 +390,10 @@
     "편": "gal014",
     "job": "jobs/gal014.json",
     "at": "2026-10-16 06:00",
-    "posted": false,
-    "posted_ts": null,
-    "posted_at": null,
-    "media_id": null
+    "posted": true,
+    "posted_ts": 1792155690.139145,
+    "posted_at": "2026-10-16 06:01:30",
+    "media_id": "18112716472878781"
   },
   {
     "편": "gal015",
