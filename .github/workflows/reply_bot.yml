@@ -1,0 +1,54 @@
+name: reply-bot (comments)
+
+# 수동(또는 Claude 예약작업)에서만 실행된다. cron 없음 =
+# 사람이 검수/드래프트한 outbox 없이는 공개 게시가 절대 일어나지 않는다.
+# 기존 자동발행(publish*.yml)과 완전히 독립 — 그 워크플로우는 건드리지 않는다.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "check | dump | post"
+        required: true
+        default: "dump"
+        type: choice
+        options: [check, dump, post]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reply-bot
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run reply_bot (${{ github.event.inputs.mode }})
+        env:
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+        run: |
+          python3 reply_bot.py --${{ github.event.inputs.mode }}
+
+      - name: Commit state files
+        if: ${{ github.event.inputs.mode != 'check' }}
+        run: |
+          git config user.name  "witnessway-reply-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add comments_inbox.json replies_outbox.json handled.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "reply-bot: ${{ github.event.inputs.mode }} 상태 갱신 [skip ci]"
+            git push
+          fi
