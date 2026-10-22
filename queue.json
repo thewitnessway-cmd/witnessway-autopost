@@ -444,10 +444,10 @@
     "편": "gal020",
     "job": "jobs/gal020.json",
     "at": "2026-10-22 06:00",
-    "posted": false,
-    "posted_ts": null,
-    "posted_at": null,
-    "media_id": null
+    "posted": true,
+    "posted_ts": 1792674098.3585153,
+    "posted_at": "2026-10-22 06:01:38",
+    "media_id": "18107042099172431"
   },
   {
     "편": "gal021",
