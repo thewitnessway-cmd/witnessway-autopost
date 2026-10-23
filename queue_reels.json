@@ -444,9 +444,9 @@
     "편": "galr020",
     "job": "jobs/galr020.json",
     "at": "2026-10-22 20:00",
-    "posted": false,
-    "posted_ts": null,
-    "posted_at": null,
-    "media_id": null
+    "posted": true,
+    "posted_ts": 1792724483.9492264,
+    "posted_at": "2026-10-22 20:01:23",
+    "media_id": "18144210625514990"
   }
 ]
