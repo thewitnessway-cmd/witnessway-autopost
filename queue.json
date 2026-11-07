@@ -588,10 +588,10 @@
     "편": "gal036",
     "job": "jobs/gal036.json",
     "at": "2026-11-07 06:00",
-    "posted": false,
-    "posted_ts": null,
-    "posted_at": null,
-    "media_id": null
+    "posted": true,
+    "posted_ts": 1794060079.7799795,
+    "posted_at": "2026-11-07 06:01:19",
+    "media_id": "18122648897068646"
   },
   {
     "편": "gal037",
