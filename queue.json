@@ -759,9 +759,9 @@
     "편": "galF3",
     "job": "jobs/galF3.json",
     "at": "2026-11-26 06:00",
-    "posted": false,
-    "posted_ts": null,
-    "posted_at": null,
-    "media_id": null
+    "posted": true,
+    "posted_ts": 1795701714.2559056,
+    "posted_at": "2026-11-26 06:01:54",
+    "media_id": "17888898261505608"
   }
 ]
